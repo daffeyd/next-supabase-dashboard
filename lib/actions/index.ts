@@ -6,3 +6,10 @@ export async function readUserSession() {
 
 	return supabase.auth.getSession();
 }
+
+export async function readUserData() {
+	const supabase = await createSupbaseServerClientReadOnly();
+
+	return supabase.auth.getUser();
+}
+
